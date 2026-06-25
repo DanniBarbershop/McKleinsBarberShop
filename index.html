@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>McKleins Barbershop</title>
 
-<style>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Poppins:wght@300;400;500;600&display=swap');
+<style>
 
 *{
 margin:0;
@@ -17,40 +20,91 @@ scroll-behavior:smooth;
 }
 
 body{
-font-family:'Poppins',sans-serif;
 background:#090909;
+font-family:'Poppins',sans-serif;
 color:white;
 overflow-x:hidden;
 }
 
+img{
+max-width:100%;
+display:block;
+}
+
+a{
+text-decoration:none;
+color:white;
+}
+
+:root{
+
+--gold:#d6b15f;
+--gold2:#b88a25;
+--black:#090909;
+--card:#111111;
+
+}
+
 header{
+
 position:fixed;
 top:0;
 left:0;
 width:100%;
-padding:25px 8%;
+padding:18px 70px;
 display:flex;
 justify-content:space-between;
 align-items:center;
 z-index:999;
-background:rgba(0,0,0,.45);
-backdrop-filter:blur(10px);
+background:rgba(0,0,0,.35);
+backdrop-filter:blur(8px);
+
 }
 
-.logoMenu{
-width:220px;
+.logo{
+
+height:72px;
+
+}
+
+nav{
+
+display:flex;
+gap:38px;
+align-items:center;
+
 }
 
 nav a{
-text-decoration:none;
-color:white;
-margin-left:35px;
-font-weight:500;
-transition:.35s;
+
+font-size:15px;
+font-weight:600;
+transition:.30s;
+
 }
 
 nav a:hover{
-color:#d4af37;
+
+color:var(--gold);
+
+}
+
+.boton-header{
+
+border:2px solid var(--gold);
+padding:12px 24px;
+border-radius:8px;
+color:var(--gold);
+font-weight:700;
+transition:.30s;
+
+}
+
+.boton-header:hover{
+
+background:var(--gold);
+color:black;
+
 }
 
 .hero{
@@ -59,7 +113,10 @@ height:100vh;
 
 background:
 
-linear-gradient(rgba(0,0,0,.70),rgba(0,0,0,.80)),
+linear-gradient(to right,
+rgba(0,0,0,.82),
+rgba(0,0,0,.45),
+rgba(0,0,0,.15)),
 
 url("WhatsApp Image 2026-03-09 at 6.07.10 p.m..jpeg");
 
@@ -67,173 +124,161 @@ background-size:cover;
 background-position:center;
 
 display:flex;
-justify-content:center;
 align-items:center;
 
-text-align:center;
+padding-left:90px;
 
 }
 
-.heroContenido{
+.hero-contenido{
 
-max-width:900px;
-
-padding:20px;
+max-width:640px;
 
 }
 
-.heroContenido h1{
+.sub{
 
+font-size:30px;
 font-family:'Cinzel',serif;
-
-font-size:95px;
-
-letter-spacing:8px;
-
-color:#d4af37;
-
-margin-bottom:20px;
-
-text-shadow:0 0 20px rgba(212,175,55,.5);
-
-}
-
-.heroContenido p{
-
-font-size:22px;
-
-margin-bottom:35px;
-
-}
-
-.boton{
-
-display:inline-block;
-
-padding:18px 45px;
-
-background:#d4af37;
-
-border-radius:60px;
-
-text-decoration:none;
-
-color:black;
-
-font-weight:bold;
-
-transition:.35s;
-
-}
-
-.boton:hover{
-
-transform:scale(1.05);
-
-box-shadow:0 0 25px #d4af37;
-
-}
-
-section{
-
-padding:100px 8%;
+letter-spacing:3px;
+margin-bottom:12px;
 
 }
 
 .titulo{
 
 font-family:'Cinzel',serif;
-
-font-size:52px;
-
-color:#d4af37;
-
-text-align:center;
-
-margin-bottom:60px;
-
-}
-.servicios{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-
-gap:30px;
+font-size:82px;
+line-height:92px;
+color:#f4e5bd;
 
 }
 
-.card{
+.linea{
 
-background:#111;
+width:100%;
+height:2px;
+background:linear-gradient(to right,var(--gold),transparent);
+margin:28px 0;
 
-border:1px solid rgba(212,175,55,.25);
+}
 
-border-radius:20px;
+.descripcion{
 
-padding:35px;
+font-size:24px;
+line-height:38px;
+color:#ececec;
+margin-bottom:45px;
+
+}
+
+.boton-principal{
+
+display:inline-block;
+
+background:transparent;
+
+border:2px solid var(--gold);
+
+color:var(--gold);
+
+padding:18px 34px;
+
+font-weight:700;
+
+border-radius:8px;
 
 transition:.35s;
 
-cursor:pointer;
+}
+
+.boton-principal:hover{
+
+background:var(--gold);
+color:black;
 
 }
 
-.card:hover{
+section{
+
+padding:110px 9%;
+
+}
+
+.titulo-seccion{
+
+text-align:center;
+font-family:'Cinzel',serif;
+font-size:56px;
+color:var(--gold);
+margin-bottom:70px;
+
+}
+
+.servicios{
+
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:22px;
+
+}
+
+.servicio{
+
+background:#111;
+border:1px solid #2d2d2d;
+padding:40px 20px;
+text-align:center;
+transition:.35s;
+
+}
+
+.servicio:hover{
 
 transform:translateY(-10px);
-
-border-color:#d4af37;
-
-box-shadow:0 0 30px rgba(212,175,55,.35);
+border-color:var(--gold);
 
 }
 
-.card h3{
+.icono{
+
+font-size:55px;
+margin-bottom:22px;
+
+}
+
+.servicio h3{
 
 font-family:'Cinzel',serif;
-
-font-size:30px;
-
-color:#d4af37;
-
-margin-bottom:15px;
+font-size:24px;
+color:var(--gold);
+margin-bottom:18px;
 
 }
 
-.precio{
+.servicio p{
 
-font-size:38px;
-
-font-weight:bold;
-
-margin-top:15px;
+font-size:15px;
+line-height:28px;
+color:#d9d9d9;
 
 }
 
 .galeria{
 
 display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-
-gap:25px;
+grid-template-columns:repeat(5,1fr);
+gap:18px;
 
 }
 
 .galeria img{
 
+height:350px;
 width:100%;
-
-height:420px;
-
 object-fit:cover;
-
-border-radius:20px;
-
-transition:.4s;
-
-cursor:pointer;
+border-radius:10px;
+transition:.35s;
 
 }
 
@@ -241,179 +286,222 @@ cursor:pointer;
 
 transform:scale(1.05);
 
-box-shadow:0 0 35px rgba(212,175,55,.35);
+}.reseñas{
+
+display:grid;
+grid-template-columns:1.1fr .9fr;
+gap:35px;
+align-items:center;
+
+}
+
+.google{
+
+background:#111;
+padding:45px;
+border:1px solid #2d2d2d;
+border-radius:12px;
+
+}
+
+.google h3{
+
+font-family:'Cinzel',serif;
+font-size:34px;
+color:var(--gold);
+margin-bottom:18px;
+
+}
+
+.google .calificacion{
+
+font-size:56px;
+font-weight:800;
+margin-bottom:15px;
+
+}
+
+.google p{
+
+font-size:18px;
+line-height:32px;
+color:#ddd;
 
 }
 
 .sucursales{
 
 display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-
-gap:30px;
+grid-template-columns:repeat(3,1fr);
+gap:28px;
 
 }
 
 .sucursal{
 
 background:#111;
-
-padding:35px;
-
-border-radius:20px;
-
-border:1px solid rgba(212,175,55,.25);
-
-transition:.35s;
+border:1px solid #333;
+overflow:hidden;
+border-radius:12px;
 
 }
 
-.sucursal:hover{
+.sucursal img{
 
-transform:translateY(-10px);
-
-border-color:#d4af37;
+height:220px;
+width:100%;
+object-fit:cover;
 
 }
 
-.sucursal h3{
+.info{
+
+padding:25px;
+
+}
+
+.info h3{
 
 font-family:'Cinzel',serif;
-
-color:#d4af37;
-
-font-size:32px;
-
-margin-bottom:20px;
+color:var(--gold);
+font-size:28px;
+margin-bottom:15px;
 
 }
 
-.sucursal a{
+.info p{
+
+line-height:30px;
+margin-bottom:22px;
+
+}
+
+.mapa{
 
 display:inline-block;
-
-margin-top:25px;
-
-background:#d4af37;
-
-color:black;
-
-padding:15px 30px;
-
-border-radius:40px;
-
-font-weight:bold;
-
-text-decoration:none;
+border:2px solid var(--gold);
+padding:12px 24px;
+border-radius:8px;
+color:var(--gold);
+font-weight:700;
 
 }
 
-.footer{
+.contacto{
 
-padding:70px 8%;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:35px;
 
-background:#050505;
+}
 
+.card{
+
+background:#111;
+border:1px solid #333;
+padding:45px;
+border-radius:12px;
+
+}
+
+.card h3{
+
+font-family:'Cinzel',serif;
+font-size:34px;
+color:var(--gold);
+margin-bottom:22px;
+
+}
+
+.card p{
+
+font-size:20px;
+line-height:38px;
+
+}
+
+footer{
+
+padding:60px;
 text-align:center;
+background:black;
+border-top:1px solid #222;
 
 }
 
-.footer img{
+footer img{
 
-width:200px;
-
+height:90px;
+margin:auto;
 margin-bottom:25px;
 
 }
 
-.redes{
+footer h2{
 
-margin-top:30px;
+font-family:'Cinzel',serif;
+font-size:38px;
+color:var(--gold);
 
 }
 
-.redes a{
+footer p{
 
-display:inline-block;
-
-margin:10px;
-
-color:#d4af37;
-
-text-decoration:none;
-
-font-size:20px;
+margin-top:15px;
 
 }
 
 .whatsapp{
 
 position:fixed;
-
-right:25px;
-
-bottom:25px;
-
-width:70px;
-
-height:70px;
-
+right:30px;
+bottom:30px;
+width:72px;
+height:72px;
 border-radius:50%;
-
 background:#25D366;
-
 display:flex;
-
 justify-content:center;
-
 align-items:center;
-
-font-size:34px;
-
-text-decoration:none;
-
-color:white;
-
-box-shadow:0 0 20px rgba(0,0,0,.4);
-
-animation:pulse 2s infinite;
+font-size:38px;
+z-index:999;
 
 }
 
-@keyframes pulse{
+@media(max-width:1100px){
 
-0%{transform:scale(1);}
+.servicios,
+.galeria,
+.sucursales,
+.reseñas,
+.contacto{
 
-50%{transform:scale(1.08);}
-
-100%{transform:scale(1);}
+grid-template-columns:1fr;
 
 }
 
-@media(max-width:900px){
+.hero{
 
-.heroContenido h1{
+padding:30px;
 
-font-size:55px;
+}
+
+.titulo{
+
+font-size:58px;
+line-height:65px;
+
+}
+
+header{
+
+padding:20px;
 
 }
 
 nav{
 
 display:none;
-
-}
-
-.logoMenu{
-
-width:170px;
-
-}
-
-.galeria img{
-
-height:300px;
 
 }
 
@@ -425,51 +513,63 @@ height:300px;
 
 <body><header>
 
-<img src="717994085_4428470924095458_3732366339849314850_n-removebg-preview 2.png" class="logoMenu">
+<img src="logo barbershopp.png" class="logo">
 
 <nav>
 
-<a href="#inicio">Inicio</a>
+<a href="#">INICIO</a>
+<a href="#servicios">SERVICIOS</a>
+<a href="#sucursales">SUCURSALES</a>
+<a href="#galeria">GALERÍA</a>
+<a href="#resenas">RESEÑAS</a>
+<a href="#contacto">CONTACTO</a>
 
-<a href="#servicios">Servicios</a>
+<a class="boton-header"
+href="https://wa.me/5216561062540?text=Hola,%20quiero%20agendar%20una%20cita.">
 
-<a href="#galeria">Galería</a>
+💬 AGENDAR
 
-<a href="#sucursales">Sucursales</a>
-
-<a href="#horarios">Horarios</a>
-
-<a href="#contacto">Contacto</a>
+</a>
 
 </nav>
 
 </header>
 
-<section class="hero" id="inicio">
+<section class="hero">
 
-<div class="heroContenido">
+<div class="hero-contenido">
 
-<img src="717994085_4428470924095458_3732366339849314850_n-removebg-preview 2.png" width="420">
+<div class="sub">
 
-<h1>
+MÁS QUE UN CORTE,
 
-MCKLEINS<br>
+</div>
 
-BARBERSHOP
+<h1 class="titulo">
+
+UNA EXPERIENCIA.
 
 </h1>
 
-<p>
+<div class="linea"></div>
 
-Más que un corte, una experiencia.
+<p class="descripcion">
+
+Estilo.<br>
+
+Confianza.<br>
+
+Calidad.<br>
+
+Bienvenido a McKleins Barbershop.
 
 </p>
 
-<a class="boton"
+<a class="boton-principal"
 
-href="https://wa.me/5216561062540?text=Hola,%20quiero%20agendar%20un%20corte">
+href="https://wa.me/5216561062540?text=Hola,%20quiero%20agendar%20una%20cita.">
 
-AGENDAR CITA
+💬 AGENDAR POR WHATSAPP
 
 </a>
 
@@ -479,83 +579,83 @@ AGENDAR CITA
 
 <section id="servicios">
 
-<h2 class="titulo">
+<h2 class="titulo-seccion">
 
-Servicios
+NUESTROS SERVICIOS
 
 </h2>
 
 <div class="servicios">
 
-<div class="card">
+<div class="servicio">
 
-<h3>Corte</h3>
+<div class="icono">✂️</div>
 
-<div class="precio">$300</div>
+<h3>CORTE</h3>
 
-</div>
+<p>
 
-<div class="card">
+Clásico o moderno.<br>
 
-<h3>Barba</h3>
+A tu estilo.
 
-<div class="precio">$300</div>
-
-</div>
-
-<div class="card">
-
-<h3>Corte + Barba</h3>
-
-<div class="precio">$400</div>
+</p>
 
 </div>
 
-<div class="card">
+<div class="servicio">
+
+<div class="icono">🪒</div>
+
+<h3>BARBA</h3>
+
+<p>
+
+Perfilado premium.
+
+</p>
+
+</div>
+
+<div class="servicio">
+
+<div class="icono">🧼</div>
+
+<h3>FACIAL</h3>
+
+<p>
+
+Limpieza facial profunda.
+
+</p>
+
+</div>
+
+<div class="servicio">
+
+<div class="icono">🧴</div>
+
+<h3>PRODUCTOS</h3>
+
+<p>
+
+Productos profesionales.
+
+</p>
+
+</div>
+
+<div class="servicio">
+
+<div class="icono">💎</div>
 
 <h3>VIP</h3>
 
-<div class="precio">$600</div>
+<p>
 
-</div>
+Experiencia exclusiva.
 
-<div class="card">
-
-<h3>Ceja</h3>
-
-<div class="precio">$50</div>
-
-</div>
-
-<div class="card">
-
-<h3>Black Mask</h3>
-
-<div class="precio">$80</div>
-
-</div>
-
-<div class="card">
-
-<h3>Exfoliante</h3>
-
-<div class="precio">$80</div>
-
-</div>
-
-<div class="card">
-
-<h3>Diseño</h3>
-
-<div class="precio">$80</div>
-
-</div>
-
-<div class="card">
-
-<h3>Limpieza Nariz</h3>
-
-<div class="precio">$80</div>
+</p>
 
 </div>
 
@@ -563,21 +663,95 @@ Servicios
 
 </section><section id="galeria">
 
-<h2 class="titulo">
+<h2 class="titulo-seccion">
 
-Galería de Cortes
+NUESTROS TRABAJOS
 
 </h2>
 
 <div class="galeria">
 
-<img src="WhatsApp Image 2026-03-09 at 6.07.10 p.m..jpeg" alt="Corte Fade">
+<img src="WhatsApp Image 2026-03-09 at 6.07.10 p.m..jpeg">
 
-<img src="WhatsApp Image 2026-03-15 at 7.30.59 p.m..jpeg" alt="Mid Fade">
+<img src="WhatsApp Image 2026-03-15 at 7.30.59 p.m..jpeg">
 
-<img src="WhatsApp Image 2026-03-15 at 7.31.36 p.m..jpeg" alt="Corte Clásico">
+<img src="WhatsApp Image 2026-03-15 at 7.31.36 p.m..jpeg">
 
-<img src="WhatsApp Image 2026-03-17 at 5.59.32 p.m..jpeg" alt="Burst Fade">
+<img src="WhatsApp Image 2026-03-17 at 5.59.32 p.m..jpeg">
+
+<img src="WhatsApp Image 2026-03-09 at 6.07.10 p.m..jpeg">
+
+</div>
+
+</section>
+
+<section id="resenas">
+
+<h2 class="titulo-seccion">
+
+LO QUE DICEN NUESTROS CLIENTES
+
+</h2>
+
+<div class="reseñas">
+
+<div class="google">
+
+<h3>
+
+★★★★★ 4.9 / 5
+
+</h3>
+
+<div class="calificacion">
+
++300
+
+</div>
+
+<p>
+
+Clientes satisfechos.
+
+<br><br>
+
+Excelente ambiente.
+
+<br>
+
+Atención personalizada.
+
+<br>
+
+Cortes modernos.
+
+<br>
+
+Servicio Premium.
+
+</p>
+
+<br>
+
+<a class="boton-principal"
+
+href="https://maps.app.goo.gl/J64Axv8zqobBvsfX7">
+
+VER RESEÑAS
+
+</a>
+
+</div>
+
+<div>
+
+<img
+
+src="WhatsApp Image 2026-03-09 at 6.07.10 p.m..jpeg"
+
+style="border-radius:12px;">
+
+</div>
 
 </div>
 
@@ -585,15 +759,19 @@ Galería de Cortes
 
 <section id="sucursales">
 
-<h2 class="titulo">
+<h2 class="titulo-seccion">
 
-Sucursales
+SUCURSALES
 
 </h2>
 
 <div class="sucursales">
 
 <div class="sucursal">
+
+<img src="whats 9.jpeg">
+
+<div class="info">
 
 <h3>
 
@@ -603,21 +781,27 @@ Plaza Hatria
 
 <p>
 
-9853 Supermanzana Blvd<br>
-
 Ciudad Juárez, Chihuahua
 
 </p>
 
-<a href="https://maps.app.goo.gl/J64Axv8zqobBvsfX7">
+<a class="mapa"
 
-Ver ubicación
+href="https://maps.app.goo.gl/J64Axv8zqobBvsfX7">
+
+VER UBICACIÓN
 
 </a>
 
 </div>
 
+</div>
+
 <div class="sucursal">
+
+<img src="whats 2.jpeg">
+
+<div class="info">
 
 <h3>
 
@@ -627,15 +811,43 @@ Plaza Aurum
 
 <p>
 
-Valle del Sol<br>
-
-Ciudad Juárez, Chihuahua
+Valle del Sol
 
 </p>
 
-<a href="https://maps.app.goo.gl/khD7Rg8W2Xoz5iYf9">
+<a class="mapa"
 
-Ver ubicación
+href="https://maps.app.goo.gl/khD7Rg8W2Xoz5iYf9">
+
+VER UBICACIÓN
+
+</a>
+
+</div>
+
+</div><div class="sucursal">
+
+<img src="whats 9.jpeg">
+
+<div class="info">
+
+<h3>
+
+Próximamente
+
+</h3>
+
+<p>
+
+Nueva sucursal McKleins
+
+</p>
+
+<a class="mapa"
+
+href="#">
+
+PRÓXIMAMENTE
 
 </a>
 
@@ -643,107 +855,57 @@ Ver ubicación
 
 </div>
 
+</div>
+
 </section>
 
-<section id="horarios">
+<section id="contacto">
 
-<h2 class="titulo">
+<h2 class="titulo-seccion">
 
-Horarios
+CONTACTO
 
 </h2>
 
-<div class="servicios">
+<div class="contacto">
 
 <div class="card">
 
 <h3>
 
-Lunes - Sábado
+Agenda tu cita
 
 </h3>
 
-<div class="precio">
-
-10:00 AM
-
-</div>
-
 <p>
 
-a
+📱 656 106 2540
 
-</p>
+<br><br>
 
-<div class="precio">
+Lunes a Sábado
 
-8:00 PM
+<br>
 
-</div>
+10:00 AM - 8:00 PM
 
-</div>
-
-<div class="card">
-
-<h3>
+<br><br>
 
 Domingo
 
-</h3>
+<br>
 
-<div class="precio">
-
-10:00 AM
-
-</div>
-
-<p>
-
-a
-
-</p>
-
-<div class="precio">
-
-4:00 PM
-
-</div>
-
-</div>
-
-</div>
-
-</section><section id="contacto">
-
-<h2 class="titulo">
-
-Contáctanos
-
-</h2>
-
-<div class="servicios">
-
-<div class="card">
-
-<h3>
-
-WhatsApp
-
-</h3>
-
-<p>
-
-656 106 2540
+10:00 AM - 4:00 PM
 
 </p>
 
 <br>
 
-<a class="boton"
+<a class="boton-principal"
 
-href="https://wa.me/5216561062540?text=Hola,%20quiero%20agendar%20un%20corte">
+href="https://wa.me/5216561062540?text=Hola,%20quiero%20agendar%20una%20cita.">
 
-Enviar mensaje
+AGENDAR AHORA
 
 </a>
 
@@ -757,7 +919,7 @@ Síguenos
 
 </h3>
 
-<div class="redes">
+<p>
 
 <a href="https://www.facebook.com/profile.php?id=61589586226499">
 
@@ -781,7 +943,7 @@ TikTok
 
 </a>
 
-</div>
+</p>
 
 </div>
 
@@ -789,9 +951,9 @@ TikTok
 
 </section>
 
-<footer class="footer">
+<footer>
 
-<img src="717994085_4428470924095458_3732366339849314850_n-removebg-preview 2.png">
+<img src="logo barbershopp.png">
 
 <h2>
 
@@ -799,19 +961,15 @@ McKleins Barbershop
 
 </h2>
 
-<br>
-
 <p>
 
 Más que un corte, una experiencia.
 
 </p>
 
-<br>
-
 <p>
 
-© 2026 McKleins Barbershop
+© 2026 Todos los derechos reservados.
 
 </p>
 
@@ -821,9 +979,7 @@ Más que un corte, una experiencia.
 
 class="whatsapp"
 
-href="https://wa.me/5216561062540?text=Hola,%20quiero%20agendar%20un%20corte"
-
->
+href="https://wa.me/5216561062540?text=Hola,%20quiero%20agendar%20una%20cita.">
 
 💬
 
